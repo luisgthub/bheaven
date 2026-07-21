@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bngmvyfcit10c"]
+
+[ext_resource type="Script" uid="uid://cytnx82q4msat" path="res://menus/start.gd" id="1_7u63d"]
+[ext_resource type="Texture2D" uid="uid://bsdkc0m5r0ihq" path="res://menus/start.png" id="2_v2swd"]
+[ext_resource type="Texture2D" uid="uid://6m3fp5qc56ds" path="res://menus/quit.png" id="3_u5o5l"]
+[ext_resource type="Texture2D" uid="uid://cik53hgvyt7pl" path="res://menus/menu-background.png" id="4_a7sg3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a7sg3"]
+shadow_size = 0
+shadow_color = Color(0.4509804, 0.09019608, 0.94509804, 1)
+
+[node name="CenterContainer" type="Control" unique_id=1544224367]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 321.0
+offset_bottom = 240.0
+script = ExtResource("1_7u63d")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1187886697]
+z_index = -1
+layout_mode = 0
+offset_left = -1.0
+offset_right = 320.0
+offset_bottom = 240.0
+texture = ExtResource("4_a7sg3")
+expand_mode = 2
+stretch_mode = 1
+
+[node name="VBoxContainer" type="Control" parent="." unique_id=278766082]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="start" type="TextureButton" parent="VBoxContainer" unique_id=990964352]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = 149.0
+offset_right = 108.0
+offset_bottom = 165.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 3.0
+layout_direction = 1
+texture_normal = ExtResource("2_v2swd")
+
+[node name="quit" type="TextureButton" parent="VBoxContainer" unique_id=548707041]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 188.0
+offset_right = 93.0
+offset_bottom = 204.0
+texture_normal = ExtResource("3_u5o5l")
+
+[node name="title" type="Label" parent="." unique_id=1560170242]
+modulate = Color(0.4509804, 0.9411765, 0.7764706, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -90.0
+offset_right = 77.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Title"
+label_settings = SubResource("LabelSettings_a7sg3")
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

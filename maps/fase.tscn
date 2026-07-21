@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b7dg8akicuvhb"]
+
+[ext_resource type="PackedScene" uid="uid://dna02pmn1j1og" path="res://player/player.tscn" id="1_s3ndg"]
+[ext_resource type="Script" uid="uid://c1f4mwr78hi6l" path="res://maps/fase.gd" id="1_wescl"]
+[ext_resource type="PackedScene" uid="uid://kejuo0jg2tlv" path="res://enemies/enemy.tscn" id="2_jb5a4"]
+
+[node name="fase" type="Node2D" unique_id=1712191911]
+script = ExtResource("1_wescl")
+enemy_scene = ExtResource("2_jb5a4")
+
+[node name="player" parent="." unique_id=1841599539 instance=ExtResource("1_s3ndg")]
+
+[node name="enemySpawnLine" type="Line2D" parent="." unique_id=2098162158]
+position = Vector2(-7.019232, -14.202703)
+scale = Vector2(1.8317308, 1.9594594)
+points = PackedVector2Array(0, 0, 93.91077, 0.10344887, 191, 0, 191, 69, 190.54068, 137.89656, 86.81365, 137.89656, -7, 138, -7, 63)
+width = 5.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1483175655]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_create_enemy_timeout"]

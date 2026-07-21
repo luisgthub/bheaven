@@ -1,0 +1,13 @@
+res://weapons/base_weapon.tscn
+res://weapons/basic-shot.tscn
+res://weapons/basic_shot.gd
+res://enemies/enemy.tscn
+res://enemies/base_enemy.gd
+res://player/player.tscn
+res://main.tscn
+res://maps/fase.tscn
+res://maps/fase.gd
+res://player/player.gd
+res://weapons/base_weapon.gd
+res://ui/lifebar.tscn
+res://menus/game_over.tscn

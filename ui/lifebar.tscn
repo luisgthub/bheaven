@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cesuh68d0jqx5"]
+
+[ext_resource type="Texture2D" uid="uid://galde3j67lsp" path="res://ui/bar-out.png" id="1_jnl7p"]
+[ext_resource type="Texture2D" uid="uid://6l18i1ct2sto" path="res://ui/bar-in.png" id="2_1mbcd"]
+
+[node name="lifebar" type="Control" unique_id=1122357772]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bar" type="TextureProgressBar" parent="." unique_id=510190637]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 10.0
+offset_right = 8.0
+offset_bottom = 15.0
+min_value = 1.0
+value = 1.0
+texture_under = ExtResource("1_jnl7p")
+texture_progress = ExtResource("2_1mbcd")
+texture_progress_offset = Vector2(1, 1)

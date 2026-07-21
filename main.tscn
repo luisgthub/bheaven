@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://toqd84r8up7d"]
+
+[ext_resource type="PackedScene" uid="uid://b7dg8akicuvhb" path="res://maps/fase.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://cik53hgvyt7pl" path="res://menus/menu-background.png" id="2_0xm2m"]
+
+[node name="main" type="Node2D" unique_id=1534841372]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=905884714]
+position = Vector2(160, 120)
+
+[node name="fase" parent="." unique_id=1712191911 instance=ExtResource("1_ig7tw")]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=684048776]
+z_index = -2
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_0xm2m")
