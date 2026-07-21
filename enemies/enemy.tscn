@@ -1,21 +1,22 @@
 [gd_scene format=3 uid="uid://kejuo0jg2tlv"]
 
 [ext_resource type="Script" uid="uid://drvwnjakpjhh1" path="res://enemies/base_enemy.gd" id="1_7frlh"]
-[ext_resource type="Texture2D" uid="uid://ci8gafb3qs5l3" path="res://player/enemy.png" id="1_fw1ev"]
+[ext_resource type="Resource" uid="uid://ddb72nf6k5equ" path="res://enemies/bat.tres" id="2_orwns"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7frlh"]
 size = Vector2(12, 12)
 
 [node name="enemy" type="Node2D" unique_id=1684502755]
+z_index = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1037724616 groups=["enemy"]]
 script = ExtResource("1_7frlh")
+enemy_data = ExtResource("2_orwns")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=726865224]
 shape = SubResource("RectangleShape2D_7frlh")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1984623401]
-texture = ExtResource("1_fw1ev")
 
 [node name="Timer" type="Timer" parent="." unique_id=1337601284]
 wait_time = 0.3

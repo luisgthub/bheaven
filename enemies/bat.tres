@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://ddb72nf6k5equ"]
+
+[ext_resource type="Script" uid="uid://cetdhctxd4jpv" path="res://enemy_data.gd" id="1_s3307"]
+[ext_resource type="Texture2D" uid="uid://ci8gafb3qs5l3" path="res://player/enemy.png" id="2_hiv56"]
+
+[resource]
+script = ExtResource("1_s3307")
+enemy_name = "bat"
+life = 5
+damage = 5
+sprite = ExtResource("2_hiv56")
+metadata/_custom_type_script = "uid://cetdhctxd4jpv"

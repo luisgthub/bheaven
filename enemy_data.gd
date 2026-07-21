@@ -1,0 +1,18 @@
+class_name EnemyData
+extends Resource
+
+@export var enemy_name:String
+@export var life:int
+@export var damage:int
+@export var sprite:CompressedTexture2D
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass

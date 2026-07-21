@@ -3,10 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://dna02pmn1j1og" path="res://player/player.tscn" id="1_s3ndg"]
 [ext_resource type="Script" uid="uid://c1f4mwr78hi6l" path="res://maps/fase.gd" id="1_wescl"]
 [ext_resource type="PackedScene" uid="uid://kejuo0jg2tlv" path="res://enemies/enemy.tscn" id="2_jb5a4"]
+[ext_resource type="Resource" uid="uid://ddb72nf6k5equ" path="res://enemies/bat.tres" id="3_irph6"]
 
-[node name="fase" type="Node2D" unique_id=1712191911]
+[node name="spawner" type="Node2D" unique_id=1712191911]
 script = ExtResource("1_wescl")
 enemy_scene = ExtResource("2_jb5a4")
+bat = ExtResource("3_irph6")
 
 [node name="player" parent="." unique_id=1841599539 instance=ExtResource("1_s3ndg")]
 

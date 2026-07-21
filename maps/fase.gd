@@ -1,11 +1,15 @@
 extends Node2D
 @export var enemy_scene:PackedScene
+#exporta os resource.tres aqui
+@export var bat:EnemyData
+var enemyArray = [bat]
 #pegar pontos
 @onready var spawn_line = $enemySpawnLine
 func spawn_when_five():
 	print("nasce monstro de um tipo")
 func spawn_timer():
 	var inst = enemy_scene.instantiate()
+	inst.set("enemy_data", enemyArray[0])
 	var random_spawn_point = randi_range(0,spawn_line.points.size()-1)
 	var spawn_converted_point = spawn_line.points[random_spawn_point]
 	inst.global_position = spawn_line.to_global(spawn_converted_point)
