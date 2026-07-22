@@ -31,5 +31,6 @@ wait_time = 1.5
 
 [node name="lifebar" parent="." unique_id=1122357772 instance=ExtResource("4_yw30f")]
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_player_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_player_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_proj_timer_timeout"]

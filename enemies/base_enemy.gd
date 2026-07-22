@@ -1,6 +1,8 @@
 class_name BaseEnemy
+
 extends CharacterBody2D
-var enemy_speed = 30
+@export var drop_scene:PackedScene
+var enemy_speed = 10
 var target = null
 @export var enemy_data:EnemyData
 @onready var timer = $Timer
@@ -18,6 +20,25 @@ func _ready() -> void:
 		print("life",life)
 	if sprite and enemy_data.sprite:
 		sprite.texture = enemy_data.sprite
+func make_xp_drop():
+	var drop_chance = randf()
+	if drop_chance<=0.5:
+		var inst = drop_scene.instantiate()
+		inst.global_position = global_position	
+		get_tree().current_scene.add_child(inst)
+		
+func enemy_take_damage(damage_value:int):
+	life-= damage_value
+	print("dano tomado",life)
+	var explo = get_node_or_null("explosion")
+	if life<=0:
+		
+		if explo:
+			explo.reparent(get_tree().current_scene)
+			explo.emitting = true
+			make_xp_drop()
+		queue_free()
+		
 func _physics_process(delta: float) -> void:
 	target = Manager.player_pos
 	if target:

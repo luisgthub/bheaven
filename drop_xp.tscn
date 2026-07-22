@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b32vmq0yu6a42"]
+
+[ext_resource type="Texture2D" uid="uid://cuovn6umhgj37" path="res://assets/xp_drop.png" id="1_yaeed"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_itn84"]
+radius = 3.0
+height = 6.0
+
+[node name="drop_xp" type="Node2D" unique_id=83907543]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=354259940 groups=["drop_xp"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=446433369]
+shape = SubResource("CapsuleShape2D_itn84")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=523153585]
+texture = ExtResource("1_yaeed")

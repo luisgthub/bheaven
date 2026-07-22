@@ -1,0 +1,10 @@
+res://enemies/enemy.tscn
+res://drop_xp.tscn
+res://enemies/base_enemy.gd
+res://player/player.tscn
+res://player/player.gd
+res://xp.tscn
+res://main.tscn
+res://maps/fase.tscn
+res://maps/fase.gd
+res://xp.gd

@@ -4,8 +4,9 @@
 [ext_resource type="Script" uid="uid://c1f4mwr78hi6l" path="res://maps/fase.gd" id="1_wescl"]
 [ext_resource type="PackedScene" uid="uid://kejuo0jg2tlv" path="res://enemies/enemy.tscn" id="2_jb5a4"]
 [ext_resource type="Resource" uid="uid://ddb72nf6k5equ" path="res://enemies/bat.tres" id="3_irph6"]
+[ext_resource type="PackedScene" uid="uid://kh4uf24god0m" path="res://xp.tscn" id="5_owdj8"]
 
-[node name="spawner" type="Node2D" unique_id=1712191911]
+[node name="fase" type="Node2D" unique_id=1712191911]
 script = ExtResource("1_wescl")
 enemy_scene = ExtResource("2_jb5a4")
 bat = ExtResource("3_irph6")
@@ -21,4 +22,11 @@ width = 5.0
 [node name="Timer" type="Timer" parent="." unique_id=1483175655]
 autostart = true
 
+[node name="xp" parent="." unique_id=634062879 instance=ExtResource("5_owdj8")]
+offset_left = 40.0
+offset_top = 5.0
+offset_right = 40.0
+offset_bottom = 5.0
+
+[connection signal="xp_collected" from="player" to="." method="_on_player_xp_collected"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_create_enemy_timeout"]

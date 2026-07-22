@@ -4,7 +4,11 @@ extends Node2D
 @export var bat:EnemyData
 var enemyArray = [bat]
 #pegar pontos
+@onready var xpbar = $xp/xpbar
 @onready var spawn_line = $enemySpawnLine
+
+func _ready() -> void:
+	$player.connect("xp_collected",_on_player_xp_collected)
 func spawn_when_five():
 	print("nasce monstro de um tipo")
 func spawn_timer():
@@ -24,3 +28,7 @@ func _process(delta: float) -> void:
 
 func _on_timer_create_enemy_timeout() -> void:
 	spawn_timer()	
+
+
+func _on_player_xp_collected(value: int) -> void:
+	xpbar.value +=value
