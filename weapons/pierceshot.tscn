@@ -4,12 +4,10 @@
 [ext_resource type="Script" uid="uid://wb243trpbicd" path="res://weapons/pierceshot.gd" id="2_jki8q"]
 [ext_resource type="Texture2D" uid="uid://2cp5mdgmuo5q" path="res://assets/cross.png" id="2_mpi32"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpi32"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6vjd"]
 size = Vector2(8, 10)
 
 [node name="base_weapon" unique_id=291626842 instance=ExtResource("1_doxf7")]
-collision_layer = 3
-collision_mask = 3
 script = ExtResource("2_jki8q")
 
 [node name="Sprite2D" parent="." index="0" unique_id=348010403]
@@ -17,7 +15,7 @@ texture = ExtResource("2_mpi32")
 hframes = 1
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1350964178]
-shape = SubResource("RectangleShape2D_mpi32")
+shape = SubResource("RectangleShape2D_a6vjd")
 
 [node name="Timer" parent="." index="2" unique_id=436504801]
 wait_time = 3.0

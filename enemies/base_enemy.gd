@@ -37,7 +37,9 @@ func enemy_take_damage(damage_value:int):
 			explo.reparent(get_tree().current_scene)
 			explo.emitting = true
 			make_xp_drop()
-		call_deferred("queue_free")
+		$Sprite2D.visible =false
+		await get_tree().create_timer(0.3).timeout
+		queue_free()
 		
 func _physics_process(delta: float) -> void:
 	target = Manager.player_pos

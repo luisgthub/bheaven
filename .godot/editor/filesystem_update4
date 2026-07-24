@@ -1,1 +1,7 @@
 res://enemies/enemy.tscn
+res://weapons/pierceshot.tscn
+res://enemies/bat.tres
+res://weapons/basic-shot.tscn
+res://weapons/base_weapon.tscn
+res://enemies/base_enemy.gd
+res://weapons/pierceshot.gd

@@ -19,10 +19,12 @@ func _physics_process(delta: float) -> void:
 	$Sprite2D.rotate(deg_to_rad(2))
 	$CollisionShape2D.rotate(deg_to_rad(2))
 	if raycast.is_colliding():
+		var collider = raycast.get_collider()
 		global_position+=velocity*delta
 		var colision_normal = raycast.get_collision_normal()
-		velocity =velocity.bounce(colision_normal)
-		global_position += velocity.normalized()
+		if is_instance_valid(collider):
+			velocity =velocity.bounce(colision_normal)
+			global_position += velocity.normalized()
 		max_bounce+=1
 		if max_bounce<=3:
 			call_deferred("queue_free")

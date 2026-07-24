@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1784862591
+::res://::1784894237
 drop_xp.tscn::PackedScene::4408743871404685293::1784861747::0::1::::<><><>0<>0<><>::uid://cuovn6umhgj37::::res://assets/xp_drop.png
 enemy_data.gd::GDScript::5093014706249259759::1784661298::0::1::::EnemyData<>Resource<><>0<>0<><>::
 icon.svg::CompressedTexture2D::8002739967809994294::1784303165::1784303174::1::::<><><>0<>0<>94f687f5f1c588369cf5d8aa710e4e81<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
@@ -15,10 +15,10 @@ holywater.png::CompressedTexture2D::5162914696076713712::1784825504::1784825507:
 xpbarin.png::CompressedTexture2D::1272608964221443930::1784730458::1784730375::1::::<><><>0<>0<>599f86f21b39ad75c485a2d2b981978d<>res://.godot/imported/xpbarin.png-2a3197250ff4eaefb83a2aa9d99b18c9.ctex::
 xpbarout.png::CompressedTexture2D::7013098235413924388::1784734118::1784734120::1::::<><><>0<>0<>b6190341e7242ad491948b04ad505967<>res://.godot/imported/xpbarout.png-06bab2258d65075b3c1332c6ac9fc4a6.ctex::
 xp_drop.png::CompressedTexture2D::6206819460547315484::1784726847::1784726863::1::::<><><>0<>0<>373d0de744191849e1cef61ca97415ec<>res://.godot/imported/xp_drop.png-b72c208ba41ce5cd90cf38a10d0a35e0.ctex::
-::res://enemies/::1784862469
+::res://enemies/::1784862702
 base_enemy.gd::GDScript::8397183788107647516::1784862053::0::1::::BaseEnemy<>CharacterBody2D<><>0<>0<><>::
 bat.tres::Resource/EnemyData::7373884811902038900::1784832628::0::1::::<><><>0<>0<><>::uid://cetdhctxd4jpv::::res://enemy_data.gd
-enemy.tscn::PackedScene::710728890574591855::1784862469::0::1::::<><><>0<>0<><>::uid://drvwnjakpjhh1::::res://enemies/base_enemy.gd<>uid://b32vmq0yu6a42::::res://drop_xp.tscn<>uid://ddb72nf6k5equ::::res://enemies/bat.tres<>uid://yiemehwpwa2d::::res://assets/bat.png
+enemy.tscn::PackedScene::710728890574591855::1784862702::0::1::::<><><>0<>0<><>::uid://drvwnjakpjhh1::::res://enemies/base_enemy.gd<>uid://b32vmq0yu6a42::::res://drop_xp.tscn<>uid://ddb72nf6k5equ::::res://enemies/bat.tres<>uid://yiemehwpwa2d::::res://assets/bat.png
 ::res://font/::1784568821
 PressStart2P-Regular.ttf::FontFile::7481920137188845070::1758066372::1784564787::1::::<><><>0<>0<>3075cea2d973cff8c8035c694592c0fd<>res://.godot/imported/PressStart2P-Regular.ttf-1dca1ff03738d8a3041c87f9868e7359.fontdata::
 ::res://maps/::1784860228

@@ -43,15 +43,14 @@ _data = {
 &"idle": SubResource("Animation_07tka")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3t1x0"]
-size = Vector2(16, 13)
+[sub_resource type="CircleShape2D" id="CircleShape2D_a6vjd"]
 
 [node name="enemy" type="Node2D" unique_id=1684502755]
 z_index = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1037724616 groups=["enemy"]]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_7frlh")
 drop_scene = ExtResource("2_a6vjd")
 enemy_data = ExtResource("2_orwns")
@@ -64,7 +63,7 @@ speed_scale = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=726865224]
 position = Vector2(0, 1.5)
-shape = SubResource("RectangleShape2D_3t1x0")
+shape = SubResource("CircleShape2D_a6vjd")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1984623401]
 texture = ExtResource("4_a6vjd")
