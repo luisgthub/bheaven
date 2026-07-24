@@ -2,6 +2,7 @@ extends Area2D
 class_name base_weapon
 @onready var timer = $Timer
 var pierce:bool = false
+var ricochete:bool = false
 @export var weapon_damage = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,7 +23,7 @@ func _on_enemy_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		if body.has_method("enemy_take_damage"):
 			body.enemy_take_damage(weapon_damage)
-			if not pierce:
-				queue_free()
+			if not pierce and not ricochete:
+				call_deferred("queue_free")
 			else:
 				pass

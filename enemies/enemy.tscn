@@ -3,22 +3,72 @@
 [ext_resource type="Script" uid="uid://drvwnjakpjhh1" path="res://enemies/base_enemy.gd" id="1_7frlh"]
 [ext_resource type="PackedScene" uid="uid://b32vmq0yu6a42" path="res://drop_xp.tscn" id="2_a6vjd"]
 [ext_resource type="Resource" uid="uid://ddb72nf6k5equ" path="res://enemies/bat.tres" id="2_orwns"]
+[ext_resource type="Texture2D" uid="uid://yiemehwpwa2d" path="res://assets/bat.png" id="4_a6vjd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7frlh"]
-size = Vector2(12, 12)
+[sub_resource type="Animation" id="Animation_a6vjd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_07tka"]
+resource_name = "idle"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53, 1.07),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3t1x0"]
+_data = {
+&"RESET": SubResource("Animation_a6vjd"),
+&"idle": SubResource("Animation_07tka")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3t1x0"]
+size = Vector2(16, 13)
 
 [node name="enemy" type="Node2D" unique_id=1684502755]
 z_index = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1037724616 groups=["enemy"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_7frlh")
 drop_scene = ExtResource("2_a6vjd")
 enemy_data = ExtResource("2_orwns")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=775937202]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_3t1x0")
+autoplay = &"idle"
+speed_scale = 3.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=726865224]
-shape = SubResource("RectangleShape2D_7frlh")
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_3t1x0")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1984623401]
+texture = ExtResource("4_a6vjd")
+hframes = 3
 
 [node name="explosion" type="CPUParticles2D" parent="CharacterBody2D" unique_id=2114756749]
 z_index = 1

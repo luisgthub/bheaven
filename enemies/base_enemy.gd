@@ -37,7 +37,7 @@ func enemy_take_damage(damage_value:int):
 			explo.reparent(get_tree().current_scene)
 			explo.emitting = true
 			make_xp_drop()
-		queue_free()
+		call_deferred("queue_free")
 		
 func _physics_process(delta: float) -> void:
 	target = Manager.player_pos

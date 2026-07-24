@@ -4,14 +4,16 @@
 
 [node name="base_weapon" type="Area2D" unique_id=291626842]
 z_index = -1
+collision_layer = 2
 script = ExtResource("1_1ji47")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=348010403]
+hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1350964178]
 
 [node name="Timer" type="Timer" parent="." unique_id=436504801]
-wait_time = 0.5
+wait_time = 2.0
 autostart = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=925302724]

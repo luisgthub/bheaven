@@ -3,8 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://dcaffkt6j5m8v" path="res://player/player.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://c6grqxjsqwoll" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="PackedScene" uid="uid://bauqpv8mvs7sy" path="res://weapons/basic-shot.tscn" id="2_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://874y4n8mutni" path="res://weapons/candle-orbit.tscn" id="3_g6k8r"]
 [ext_resource type="PackedScene" uid="uid://yckknrwh1sy8" path="res://menus/game_over.tscn" id="3_qjkh3"]
+[ext_resource type="PackedScene" uid="uid://b00fu3me7s5o4" path="res://weapons/holywater.tscn" id="4_boad6"]
 [ext_resource type="PackedScene" uid="uid://cesuh68d0jqx5" path="res://ui/lifebar.tscn" id="4_yw30f"]
+[ext_resource type="PackedScene" uid="uid://dfmko8g1sdiqu" path="res://weapons/pierceshot.tscn" id="5_rgyib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oul6g"]
 size = Vector2(14, 14)
@@ -14,6 +17,9 @@ position = Vector2(160, 120)
 motion_mode = 1
 script = ExtResource("1_rkbax")
 proj_scene = ExtResource("2_g1dw6")
+candle_scene = ExtResource("3_g6k8r")
+water_scene = ExtResource("4_boad6")
+pierce_scene = ExtResource("5_rgyib")
 dead_scene = ExtResource("3_qjkh3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1881971801]
@@ -31,6 +37,25 @@ wait_time = 1.5
 
 [node name="lifebar" parent="." unique_id=1122357772 instance=ExtResource("4_yw30f")]
 
+[node name="rotate_pivot" type="Marker2D" parent="." unique_id=1107691888]
+
+[node name="squad" type="Line2D" parent="rotate_pivot" unique_id=1570740695]
+position = Vector2(-20, -14.78125)
+scale = Vector2(1, 1.2187502)
+points = PackedVector2Array(0, 0, 40, 0, 40, 30, 0, 30)
+width = 1.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="rotate_timer" type="Timer" parent="." unique_id=852958697]
+wait_time = 0.1
+
+[node name="holy_line" type="Line2D" parent="." unique_id=1250653693]
+position = Vector2(0, -10)
+points = PackedVector2Array(-30, -10, -10, -10, 10, -10, 30, -10)
+width = 2.0
+default_color = Color(1, 1, 1, 0.003921569)
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_player_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_player_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_proj_timer_timeout"]
+[connection signal="timeout" from="rotate_timer" to="." method="_on_rotate_timer_timeout"]
