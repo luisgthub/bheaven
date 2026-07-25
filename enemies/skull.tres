@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dg02x5ofpecpo"]
+
+[ext_resource type="Script" uid="uid://cetdhctxd4jpv" path="res://enemy_data.gd" id="1_ev7f0"]
+[ext_resource type="Texture2D" uid="uid://t8xpad1jmns" path="res://assets/flame_head.png" id="2_q2ixj"]
+
+[resource]
+script = ExtResource("1_ev7f0")
+enemy_name = "skull"
+life = 20
+damage = 15
+sprite = ExtResource("2_q2ixj")
+metadata/_custom_type_script = "uid://cetdhctxd4jpv"

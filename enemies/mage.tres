@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://d4cdfhfm4mhnv"]
+
+[ext_resource type="Script" uid="uid://cetdhctxd4jpv" path="res://enemy_data.gd" id="1_01bvh"]
+[ext_resource type="Texture2D" uid="uid://c23wnd8o7ehi6" path="res://assets/evilmage.png" id="2_adpyf"]
+
+[resource]
+script = ExtResource("1_01bvh")
+enemy_name = "mage"
+life = 60
+damage = 20
+sprite = ExtResource("2_adpyf")
+metadata/_custom_type_script = "uid://cetdhctxd4jpv"

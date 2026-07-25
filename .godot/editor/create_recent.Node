@@ -1,3 +1,9 @@
+Label
+TextureRect
+ColorRect
+CenterContainer
+TextureButton
+HBoxContainer
 CollisionShape2D
 Area2D
 RayCast2D
@@ -6,9 +12,3 @@ AnimationPlayer
 Timer
 Line2D
 AnimationTree
-Marker2D
-PathFollow2D
-Path2D
-Label
-TextureProgressBar
-Sprite2D

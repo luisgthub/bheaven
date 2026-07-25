@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://drvwnjakpjhh1" path="res://enemies/base_enemy.gd" id="1_7frlh"]
 [ext_resource type="PackedScene" uid="uid://b32vmq0yu6a42" path="res://drop_xp.tscn" id="2_a6vjd"]
 [ext_resource type="Resource" uid="uid://ddb72nf6k5equ" path="res://enemies/bat.tres" id="2_orwns"]
-[ext_resource type="Texture2D" uid="uid://yiemehwpwa2d" path="res://assets/bat.png" id="4_a6vjd"]
+[ext_resource type="Resource" uid="uid://bhcgowns0qbm6" path="res://enemies/phantom.tres" id="4_a6vjd"]
+[ext_resource type="Resource" uid="uid://dg02x5ofpecpo" path="res://enemies/skull.tres" id="5_07tka"]
+[ext_resource type="Resource" uid="uid://d4cdfhfm4mhnv" path="res://enemies/mage.tres" id="6_3t1x0"]
 
 [sub_resource type="Animation" id="Animation_a6vjd"]
 length = 0.001
@@ -53,7 +55,10 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_7frlh")
 drop_scene = ExtResource("2_a6vjd")
-enemy_data = ExtResource("2_orwns")
+enemy_bat = ExtResource("2_orwns")
+enemy_ghost = ExtResource("4_a6vjd")
+enemy_skull = ExtResource("5_07tka")
+enemy_mage = ExtResource("6_3t1x0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=775937202]
 root_node = NodePath("../..")
@@ -66,7 +71,6 @@ position = Vector2(0, 1.5)
 shape = SubResource("CircleShape2D_a6vjd")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1984623401]
-texture = ExtResource("4_a6vjd")
 hframes = 3
 
 [node name="explosion" type="CPUParticles2D" parent="CharacterBody2D" unique_id=2114756749]

@@ -1,2 +1,2 @@
-enemyData
+EnemyData
 Resource

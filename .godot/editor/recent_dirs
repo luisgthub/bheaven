@@ -1,9 +1,10 @@
-res://weapons/
-res://assets/
-res://
-res://enemies/
-res://menus/
+res://assets/upgrade-icons/
 res://ui/
+res://assets/
+res://enemies/
+res://weapons/
+res://
+res://menus/
 res://player/
 res://maps/
 res://font/
