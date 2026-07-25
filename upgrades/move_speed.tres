@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://ci24surjh10dt"]
+
+[ext_resource type="Script" uid="uid://csymqvdpppcrt" path="res://upgrades/upgrade_data.gd" id="1_ulpsc"]
+[ext_resource type="Texture2D" uid="uid://drsmpaqs7ixej" path="res://assets/upgrade-icons/movespeed.png" id="2_hg60v"]
+
+[resource]
+script = ExtResource("1_ulpsc")
+upgrade_id = "7"
+upgrade_name = "Boost Boots"
+skill_description = "Player movement speed increased 10%."
+upgrade_icon = ExtResource("2_hg60v")
+metadata/_custom_type_script = "uid://csymqvdpppcrt"

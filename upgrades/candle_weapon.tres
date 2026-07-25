@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cf4ecaky4eqxd"]
+
+[ext_resource type="Script" uid="uid://csymqvdpppcrt" path="res://upgrades/upgrade_data.gd" id="1_47ogh"]
+[ext_resource type="Texture2D" uid="uid://b1fdj4h3jnnxd" path="res://assets/upgrade-icons/candle-weapon.png" id="2_p8seh"]
+
+[resource]
+script = ExtResource("1_47ogh")
+upgrade_id = "2"
+upgrade_name = "Candle Circle"
+skill_description = "Candle - Orbit a light candle killing enemies around."
+upgrade_icon = ExtResource("2_p8seh")
+metadata/_custom_type_script = "uid://csymqvdpppcrt"

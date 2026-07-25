@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cs21b2636b50s"]
+
+[ext_resource type="Script" uid="uid://csymqvdpppcrt" path="res://upgrades/upgrade_data.gd" id="1_7arph"]
+[ext_resource type="Texture2D" uid="uid://b0c5jkhtsjuu4" path="res://assets/upgrade-icons/bone-weapon.png" id="2_y48he"]
+
+[resource]
+script = ExtResource("1_7arph")
+upgrade_id = "1"
+upgrade_name = "Bone Shot"
+skill_description = "Bone - throw a bone killing enemies and boucing on close targets."
+upgrade_icon = ExtResource("2_y48he")
+metadata/_custom_type_script = "uid://csymqvdpppcrt"

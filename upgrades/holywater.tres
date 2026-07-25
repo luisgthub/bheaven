@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://b7im1y6d6ohm2"]
+
+[ext_resource type="Script" uid="uid://csymqvdpppcrt" path="res://upgrades/upgrade_data.gd" id="1_wjvuu"]
+
+[resource]
+script = ExtResource("1_wjvuu")
+upgrade_id = "3"
+upgrade_name = "Holy Water"
+skill_description = "Holy Water -  A bottle falls from skies killing enemies in their direction."
+metadata/_custom_type_script = "uid://csymqvdpppcrt"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bpwrj42me721x"]
+
+[ext_resource type="Script" uid="uid://csymqvdpppcrt" path="res://upgrades/upgrade_data.gd" id="1_og76l"]
+[ext_resource type="Texture2D" uid="uid://drfhm4t6slgek" path="res://assets/upgrade-icons/areaincrease.png" id="2_lpjcs"]
+
+[resource]
+script = ExtResource("1_og76l")
+upgrade_id = "5"
+upgrade_name = "More AoE"
+skill_description = "weapons gains 10% more Area of Effect."
+upgrade_icon = ExtResource("2_lpjcs")
+metadata/_custom_type_script = "uid://csymqvdpppcrt"

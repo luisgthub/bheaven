@@ -1,2 +1,3 @@
-EnemyData
+UpgradeData
 Resource
+EnemyData

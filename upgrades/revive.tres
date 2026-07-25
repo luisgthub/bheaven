@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://caoba1jyeibqc"]
+
+[ext_resource type="Script" uid="uid://csymqvdpppcrt" path="res://upgrades/upgrade_data.gd" id="1_kedij"]
+[ext_resource type="Texture2D" uid="uid://dsxsajdwl1wlh" path="res://assets/upgrade-icons/revive.png" id="2_se06m"]
+
+[resource]
+script = ExtResource("1_kedij")
+upgrade_id = "9"
+upgrade_name = "Blessed Life"
+skill_description = "Character can revive 1 time."
+upgrade_icon = ExtResource("2_se06m")
+metadata/_custom_type_script = "uid://csymqvdpppcrt"
