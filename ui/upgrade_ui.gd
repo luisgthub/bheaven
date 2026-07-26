@@ -2,9 +2,9 @@ extends CanvasLayer
 
 @onready var btn_container = $CenterContainer/HBoxContainer
 @onready var text_place = $"bottom-center"
-@onready var labels_scene = preload("res://Square_text.tscn")
 func _ready() -> void:
 	visible=true
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	pass
 
 # Chame esta função logo após instanciar no Main
@@ -35,32 +35,45 @@ func atualizar_opcoes_visuais() -> void:
 	
 	for i in range(min(3, upgrades_filtrados.size())):
 		var upgrade: UpgradeData = upgrades_filtrados[i]
-		print("Criando botão para o upgrade: ", upgrade.upgrade_name)
+		print("Criando opção para o upgrade: ", upgrade.upgrade_name)
 		
+		# 1. Container vertical
+		var vbox = VBoxContainer.new()
+		vbox.custom_minimum_size = Vector2(80, 120)
+		# IMPORTANTE: Faz o container ignorar o mouse para não bloquear os filhos
+		vbox.mouse_filter = Control.MOUSE_FILTER_PASS
+		
+		# 2. Botão com o ícone (fica em cima)
 		var btn = TextureButton.new()
-		btn.custom_minimum_size = Vector2(32,32)
+		btn.custom_minimum_size = Vector2(36, 36)
 		btn.ignore_texture_size = true
 		btn.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 		btn.texture_normal = upgrade.upgrade_icon
+		# O botão DEVE capturar o mouse para ser clicável
+		btn.mouse_filter = Control.MOUSE_FILTER_STOP
 		
+		# 3. Label com a descrição (fica abaixo do ícone)
+		var label = Label.new()
+		label.text = upgrade.skill_description
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		label.add_theme_font_size_override("font_size", 4)
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		# IMPORTANTE: O label também deve ignorar o mouse para não roubar o clique do botão (se estivessem sobrepostos)
+		label.mouse_filter = Control.MOUSE_FILTER_STOP
+		
+		# 4. Conecta os cliques do botão
 		btn.pressed.connect(func(): selecionar_upgrade(upgrade.upgrade_id))
-		btn.pressed.connect(func(): on_button_pressed(upgrade.upgrade_id,upgrade.skill_description))
-		btn_container.add_child(btn)
+		btn.pressed.connect(func(): on_button_pressed(upgrade.upgrade_id, upgrade.skill_description))
 		
+		# 5. Monta a hierarquia
+		vbox.add_child(btn)
+		vbox.add_child(label)
+		btn_container.add_child(vbox)		
+		vbox.move_child(btn, 0)
 func selecionar_upgrade(id_upgrade: String) -> void:
 	Manager.apply_upgrade(id_upgrade)
 	get_tree().paused = false
 	queue_free()
-	
-func show_skill_info(description):
-	print("info", description)
-	var inst = labels_scene.instantiate()
-		# Procura o Label dentro da cena instanciada (supondo que ele se chame "Label")
-	var label_interno = inst.get_node("Label") # Ajuste o caminho/nome se for diferente
-	if label_interno:
-		label_interno.text = description
-			
-	text_place.add_child(inst)
 	
 func on_button_pressed(id_upgrade: String, description: String):
 	print("Clicou no upgrade: ", id_upgrade)
@@ -68,7 +81,4 @@ func on_button_pressed(id_upgrade: String, description: String):
 	# Faz o Label da parte de baixo mudar para a descrição do botão que você clicou!
 	if has_node("bottom-center/Label"):
 		$"bottom-center/Label".text = description
-		
-	# Ou se você estiver usando a sua cena instanciada (text_place):
-	show_skill_info(description)
-	# Faça o que precisar com a descrição aqui, por exemplo, jogar num Label:
+	
