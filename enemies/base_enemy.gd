@@ -17,7 +17,7 @@ var enemy_name:String
 @onready var sprite: Sprite2D = $Sprite2D
 func _ready() -> void:
 	enemy_data_list = [enemy_bat,enemy_ghost,enemy_skull,enemy_mage]
-	print("enemydata",enemy_data_list)
+	#print("enemydata",enemy_data_list)
 	var enemy_data = enemy_data_list.pick_random()
 	if enemy_data:
 		#stats
@@ -35,7 +35,7 @@ func _ready() -> void:
 		#print("life",life)
 func make_xp_drop():
 	var drop_chance = randf()
-	if drop_chance<=0.5:
+	if drop_chance<=0.9:
 		var inst = drop_scene.instantiate()
 		inst.global_position = global_position	
 		get_tree().current_scene.add_child(inst)

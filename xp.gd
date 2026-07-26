@@ -1,7 +1,8 @@
 extends Control
 
 @onready var xpbar = $xpbar
-@onready var upgrade_menu = $upgrade_ui
+#@onready var upgrade_menu = $upgrade_ui
+signal level_up
 var level = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,5 +15,5 @@ func _process(delta: float) -> void:
 		level +=1
 		$level.text = "level "+str(level)
 		xpbar.max_value+=20
-		if upgrade_menu and upgrade_menu.has_method("mostrar_menu"):
-			upgrade_menu.mostrar_menu()
+		print("upo!")
+		level_up.emit()

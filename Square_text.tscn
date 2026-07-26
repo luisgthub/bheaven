@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://byxyi25xvjsc1"]
+
+[ext_resource type="Script" uid="uid://b3ltch33plcqe" path="res://square_text.gd" id="1_budhh"]
+[ext_resource type="Texture2D" uid="uid://c617xj4j0c21e" path="res://assets/upgrade-icons/description_text.png" id="1_knarc"]
+
+[node name="TextureRect" type="TextureRect" unique_id=1574493480]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_knarc")
+script = ExtResource("1_budhh")
+
+[node name="Label" type="Label" parent="." unique_id=1551031772]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 36.0
+text = "Teste"

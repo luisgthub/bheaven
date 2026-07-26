@@ -19,6 +19,7 @@ offset_bottom = -240.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gxxb8")
+upgrade_menu_scene = ExtResource("4_u5lu8")
 
 [node name="xpbar" type="TextureProgressBar" parent="." unique_id=603365924]
 layout_mode = 0
@@ -34,15 +35,3 @@ offset_top = 5.0
 offset_right = 231.0
 offset_bottom = 21.0
 label_settings = SubResource("LabelSettings_gxxb8")
-
-[node name="upgrade_ui" parent="." unique_id=289602542 instance=ExtResource("4_u5lu8")]
-layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -40.0
-offset_top = -5.0
-offset_right = -5.0
-offset_bottom = -5.0
-grow_horizontal = 1
-grow_vertical = 1

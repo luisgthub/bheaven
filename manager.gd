@@ -15,7 +15,19 @@ var candle_damage = 10
 var basic_shot_damage = 5
 var holy_damage = 5
 var bone_damage = 5
-@export var all_upgrades:Array[UpgradeData] = []
+
+@export var all_upgrades: Array[UpgradeData] = [
+	preload("res://upgrades/basic.tres"),
+	preload("res://upgrades/bone_weapon.tres"),
+	preload("res://upgrades/candle_weapon.tres"),
+	preload("res://upgrades/holywater.tres"),
+	preload("res://upgrades/damage.tres"),
+	preload("res://upgrades/increase_area.tres"),
+	preload("res://upgrades/magnet_area.tres"),
+	preload("res://upgrades/move_speed.tres"),
+	preload("res://upgrades/plus_projectile.tres"),
+	preload("res://upgrades/revive.tres")
+]
 
 func apply_upgrade(id_upgrade:String):
 	for upgrade in all_upgrades:

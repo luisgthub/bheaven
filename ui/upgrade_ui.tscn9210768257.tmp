@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b6mb01s54pvpx"]
+
+[ext_resource type="Script" uid="uid://bwg1b65xe6jxv" path="res://ui/upgrade_ui.gd" id="1_abe00"]
+
+[node name="upgrade_ui" type="CanvasLayer" unique_id=267053588]
+layer = 0
+script = ExtResource("1_abe00")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1080554112]
+modulate = Color(1, 1, 1, 0.039215688)
+offset_right = 320.0
+offset_bottom = 240.0
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=437105634]
+offset_right = 320.0
+offset_bottom = 240.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=256055982]
+layout_mode = 2
+
+[node name="bottom-center" type="CenterContainer" parent="." unique_id=27999439]
+offset_top = 137.0
+offset_right = 322.0
+offset_bottom = 242.0
+
+[node name="top-center" type="CenterContainer" parent="." unique_id=708989261]
+offset_right = 321.0
+offset_bottom = 109.0
+
+[node name="Label" type="Label" parent="top-center" unique_id=1651813991]
+layout_mode = 2
+text = "Choose upgrade"

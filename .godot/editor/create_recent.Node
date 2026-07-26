@@ -1,6 +1,7 @@
-TextureButton
 Label
 TextureRect
+CanvasLayer
+TextureButton
 ColorRect
 CenterContainer
 HBoxContainer
@@ -11,4 +12,3 @@ TileMapLayer
 AnimationPlayer
 Timer
 Line2D
-AnimationTree

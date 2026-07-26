@@ -38,7 +38,7 @@ func create_projectile(spread_angle:float):
 		inst.global_position = $attack_pivot.global_position
 		var current_angle = start_angle + (angle_offset*i)
 		inst.direction = Vector2.RIGHT.rotated(deg_to_rad(current_angle))
-		print("coords",inst.global_position)
+		#print("coords",inst.global_position)
 		get_tree().current_scene.add_child(inst)
 
 func create_orbit(spread_angle:float):
@@ -70,7 +70,7 @@ func create_pierceshot(spread_angle:float):
 		var current_angle = start_angle + (angle_offset*i)
 		inst.direction = Vector2.RIGHT.rotated(deg_to_rad(current_angle))
 		#inst.connect("target_signal",_on_proj_timer_timeout)
-		print("coords",inst.global_position)
+		#print("coords",inst.global_position)
 		get_tree().current_scene.add_child(inst)
 func rotate_candle():
 	#rotacionar o squad
@@ -97,7 +97,7 @@ func _on_player_body_entered(body: Node2D) -> void:
 
 func _on_player_area_entered(area: Area2D) -> void:
 	if area.is_in_group("drop_xp"):
-		print("adiciona 1 á barra de xp")
+		#print("adiciona 1 á barra de xp")
 		emit_signal("xp_collected",100)
 		area.queue_free()
 
