@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_7arph")
-upgrade_id = "1"
+upgrade_id = "bone"
 upgrade_name = "Bone Shot"
 skill_description = "Bone - throw a bone killing enemies and boucing on close targets."
 upgrade_icon = ExtResource("2_y48he")

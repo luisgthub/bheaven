@@ -8,7 +8,7 @@ var velocity:Vector2 = Vector2.ZERO
 #signal target_signal(target_pos_value:Vector2)
 func _ready() -> void:
 	super._ready() # Importante: não chama os outros itens
-	weapon_damage = 5 # Dano fixo do tiro básico
+	weapon_damage = Manager.bone_damage # Dano fixo do tiro básico
 	ricochete=true
 	pierce=false
 	

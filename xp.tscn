@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c66gx6a6sbg5i" path="res://assets/xpbarout.png" id="1_1jxo8"]
 [ext_resource type="Script" uid="uid://c31ekfkkmcbw2" path="res://xp.gd" id="1_gxxb8"]
 [ext_resource type="Texture2D" uid="uid://sepximsuhqgw" path="res://assets/xpbarin.png" id="2_gxxb8"]
+[ext_resource type="PackedScene" uid="uid://b6mb01s54pvpx" path="res://ui/upgrade_ui.tscn" id="4_u5lu8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gxxb8"]
 font_size = 6
@@ -33,3 +34,15 @@ offset_top = 5.0
 offset_right = 231.0
 offset_bottom = 21.0
 label_settings = SubResource("LabelSettings_gxxb8")
+
+[node name="upgrade_ui" parent="." unique_id=289602542 instance=ExtResource("4_u5lu8")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -40.0
+offset_top = -5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 1
+grow_vertical = 1

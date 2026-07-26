@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_v8uma")
-upgrade_id = "6"
+upgrade_id = "magnet"
 upgrade_name = "Magnetic"
 skill_description = "experience gem collection range increased 20%."
 upgrade_icon = ExtResource("2_nl6iq")

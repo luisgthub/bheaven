@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_kedij")
-upgrade_id = "9"
+upgrade_id = "revive"
 upgrade_name = "Blessed Life"
 skill_description = "Character can revive 1 time."
 upgrade_icon = ExtResource("2_se06m")

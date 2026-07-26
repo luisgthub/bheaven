@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_wjvuu")
-upgrade_id = "3"
+upgrade_id = "holy"
 upgrade_name = "Holy Water"
 skill_description = "Holy Water -  A bottle falls from skies killing enemies in their direction."
 metadata/_custom_type_script = "uid://csymqvdpppcrt"

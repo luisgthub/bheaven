@@ -6,7 +6,7 @@ extends Resource
 @export_multiline var skill_description: String
 @export var upgrade_icon: Texture2D
 @export var max_level: int = 4 
-var current_level: int = 0
+@export var current_level: int = 1
 
 
 #gain + 1 projectile

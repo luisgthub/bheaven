@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://b6mb01s54pvpx"]
 
 [ext_resource type="Script" uid="uid://bwg1b65xe6jxv" path="res://ui/upgrade_ui.gd" id="1_abe00"]
-[ext_resource type="Texture2D" uid="uid://bj6gsfwr0my36" path="res://assets/upgrade-icons/damageincrease.png" id="2_u1j0f"]
-[ext_resource type="Texture2D" uid="uid://dsxsajdwl1wlh" path="res://assets/upgrade-icons/revive.png" id="3_ji803"]
-[ext_resource type="Texture2D" uid="uid://d01g1cyruhqbd" path="res://assets/upgrade-icons/newprojectile.png" id="4_fmmo1"]
 [ext_resource type="Texture2D" uid="uid://c617xj4j0c21e" path="res://assets/upgrade-icons/description_text.png" id="5_ji803"]
 
 [node name="upgrade_ui" type="Control" unique_id=289602542]
@@ -29,18 +26,6 @@ offset_bottom = 240.0
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=256055982]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="CenterContainer/HBoxContainer" unique_id=1392131357]
-layout_mode = 2
-texture_normal = ExtResource("2_u1j0f")
-
-[node name="TextureButton2" type="TextureButton" parent="CenterContainer/HBoxContainer" unique_id=772252059]
-layout_mode = 2
-texture_normal = ExtResource("3_ji803")
-
-[node name="TextureButton3" type="TextureButton" parent="CenterContainer/HBoxContainer" unique_id=1404117692]
-layout_mode = 2
-texture_normal = ExtResource("4_fmmo1")
-
 [node name="bottom-center" type="CenterContainer" parent="." unique_id=27999439]
 layout_mode = 0
 offset_top = 137.0
@@ -62,4 +47,4 @@ offset_bottom = 109.0
 
 [node name="Label" type="Label" parent="top-center" unique_id=1651813991]
 layout_mode = 2
-text = "CHOOSE UPGRADE"
+text = "upgrade"

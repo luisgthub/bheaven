@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_m6rhe")
-upgrade_id = "8"
+upgrade_id = "proj"
 upgrade_name = "More Projectiles"
 skill_description = "Gain + 1 projectile for all weapons."
 upgrade_icon = ExtResource("2_qaax5")

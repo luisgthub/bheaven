@@ -46,6 +46,7 @@ _data = {
 }
 
 [node name="base_weapon" unique_id=291626842 instance=ExtResource("1_6v5fn")]
+collision_layer = 0
 script = ExtResource("2_i67vw")
 
 [node name="Sprite2D" parent="." index="0" unique_id=348010403]

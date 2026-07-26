@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_47ogh")
-upgrade_id = "2"
+upgrade_id = "candle"
 upgrade_name = "Candle Circle"
 skill_description = "Candle - Orbit a light candle killing enemies around."
 upgrade_icon = ExtResource("2_p8seh")

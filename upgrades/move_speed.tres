@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_ulpsc")
-upgrade_id = "7"
+upgrade_id = "move"
 upgrade_name = "Boost Boots"
 skill_description = "Player movement speed increased 10%."
 upgrade_icon = ExtResource("2_hg60v")

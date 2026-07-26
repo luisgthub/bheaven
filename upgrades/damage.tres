@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_u6tyg")
-upgrade_id = "4"
+upgrade_id = "dama"
 upgrade_name = "More Damage"
 skill_description = "All weapons damage increased 10%."
 upgrade_icon = ExtResource("2_abl5h")

@@ -49,7 +49,7 @@ func white_on_hit():
 	tween.tween_property($Sprite2D,"modulate",Color.WHITE,0.1)
 
 func enemy_take_damage(damage_value:int):
-	life-= damage_value
+	life-= damage_value + Manager.damage_bonus
 	print("dano tomado",life)
 	white_on_hit()
 	var explo = get_node_or_null("explosion")

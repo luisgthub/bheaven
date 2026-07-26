@@ -14,6 +14,8 @@ size = Vector2(14, 14)
 
 [node name="player" type="CharacterBody2D" unique_id=1841599539]
 position = Vector2(160, 120)
+collision_layer = 2
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_rkbax")
 proj_scene = ExtResource("2_g1dw6")
@@ -42,8 +44,8 @@ wait_time = 1.5
 [node name="rotate_pivot" type="Marker2D" parent="." unique_id=1107691888]
 
 [node name="squad" type="Line2D" parent="rotate_pivot" unique_id=1570740695]
-position = Vector2(-20, -14.78125)
-scale = Vector2(1, 1.2187502)
+position = Vector2(-40, -30)
+scale = Vector2(2, 2)
 points = PackedVector2Array(0, 0, 40, 0, 40, 30, 0, 30)
 width = 1.0
 default_color = Color(1, 1, 1, 0)
