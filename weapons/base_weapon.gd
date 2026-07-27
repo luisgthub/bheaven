@@ -3,9 +3,11 @@ class_name base_weapon
 @onready var timer = $Timer
 var pierce:bool = false
 var ricochete:bool = false
+var base_scale = Vector2(1,1)
 @export var weapon_damage = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$CollisionShape2D.scale = base_scale + Manager.area_of_effect
 	pass	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

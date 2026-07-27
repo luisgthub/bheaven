@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://hukdhwagdu7o"]
+
+[ext_resource type="Script" uid="uid://csymqvdpppcrt" path="res://upgrades/upgrade_data.gd" id="1_2quab"]
+[ext_resource type="Texture2D" uid="uid://37m3l0fq5j1a" path="res://assets/upgrade-icons/holywater-weaponplus.png" id="2_4cy8v"]
+
+[resource]
+script = ExtResource("1_2quab")
+upgrade_id = "holy-count"
+upgrade_name = "Holy Projectile"
+skill_description = "+ 1 Holy Projectile "
+upgrade_icon = ExtResource("2_4cy8v")
+metadata/_custom_type_script = "uid://csymqvdpppcrt"

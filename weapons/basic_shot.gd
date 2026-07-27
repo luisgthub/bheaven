@@ -1,7 +1,7 @@
 extends base_weapon
 var direction = Vector2.RIGHT
 var time_to_die:float = 2.0
-var speed = 80
+var speed = 200
 func _ready() -> void:
 	super._ready() # Importante: não chama os outros itens
 	weapon_damage = Manager.basic_shot_damage # Dano fixo do tiro básico

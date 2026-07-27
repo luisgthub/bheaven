@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://bhcgowns0qbm6" path="res://enemies/phantom.tres" id="4_a6vjd"]
 [ext_resource type="Resource" uid="uid://dg02x5ofpecpo" path="res://enemies/skull.tres" id="5_07tka"]
 [ext_resource type="Resource" uid="uid://d4cdfhfm4mhnv" path="res://enemies/mage.tres" id="6_3t1x0"]
+[ext_resource type="Texture2D" uid="uid://bx263pf2xgsl2" path="res://assets/particle.png" id="7_epsnb"]
 
 [sub_resource type="Animation" id="Animation_a6vjd"]
 length = 0.001
@@ -77,6 +78,7 @@ hframes = 3
 z_index = 1
 position = Vector2(0, 6)
 emitting = false
+texture = ExtResource("7_epsnb")
 lifetime = 0.2
 one_shot = true
 explosiveness = 1.0
@@ -98,7 +100,6 @@ damping_min = 200.0
 damping_max = 300.0
 scale_amount_min = 3.0
 scale_amount_max = 5.0
-color = Color(0.83253795, 0, 0.24893105, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=1337601284]
 wait_time = 0.3

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bynmk3oi4if12"]
+
+[ext_resource type="Script" uid="uid://csymqvdpppcrt" path="res://upgrades/upgrade_data.gd" id="1_7rnfb"]
+[ext_resource type="Texture2D" uid="uid://bsv8tdf2cdqpt" path="res://assets/upgrade-icons/bone-weaponplus.png" id="2_5prqy"]
+
+[resource]
+script = ExtResource("1_7rnfb")
+upgrade_id = "pierce-count"
+upgrade_name = "Pierce Projectile"
+skill_description = "+ 1 Bone Projectile "
+upgrade_icon = ExtResource("2_5prqy")
+max_level = 6
+metadata/_custom_type_script = "uid://csymqvdpppcrt"

@@ -70,7 +70,7 @@ offset_right = 77.0
 offset_bottom = -74.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Game Title"
+text = "Graveyard Survivor"
 label_settings = SubResource("LabelSettings_a7sg3")
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]

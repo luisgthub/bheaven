@@ -5,7 +5,7 @@ extends Resource
 @export var upgrade_name: String
 @export_multiline var skill_description: String
 @export var upgrade_icon: Texture2D
-@export var max_level: int = 4 
+@export var max_level: int = 6
 @export var current_level: int = 1
 
 

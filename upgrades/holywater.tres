@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_wjvuu")
-upgrade_id = "holy"
+upgrade_id = "holy-weapon"
 upgrade_name = "Holy Water"
 skill_description = "Holy Water -  A bottle falls from skies killing enemies in their direction."
 upgrade_icon = ExtResource("2_43ycg")

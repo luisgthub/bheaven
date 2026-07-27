@@ -3,15 +3,87 @@
 [ext_resource type="PackedScene" uid="uid://dna02pmn1j1og" path="res://player/player.tscn" id="1_s3ndg"]
 [ext_resource type="Script" uid="uid://c1f4mwr78hi6l" path="res://maps/fase.gd" id="1_wescl"]
 [ext_resource type="PackedScene" uid="uid://kejuo0jg2tlv" path="res://enemies/enemy.tscn" id="2_jb5a4"]
-[ext_resource type="Resource" uid="uid://ddb72nf6k5equ" path="res://enemies/bat.tres" id="3_irph6"]
 [ext_resource type="PackedScene" uid="uid://b6mb01s54pvpx" path="res://ui/upgrade_ui.tscn" id="3_o0t22"]
 [ext_resource type="PackedScene" uid="uid://kh4uf24god0m" path="res://xp.tscn" id="5_owdj8"]
+[ext_resource type="Texture2D" uid="uid://xl6coh1ov6mj" path="res://assets/map/tree1.png" id="6_y734o"]
+[ext_resource type="Texture2D" uid="uid://b3tdyrc4wywu" path="res://assets/map/grave1.png" id="7_36k7h"]
+[ext_resource type="Texture2D" uid="uid://csd6n2xcmwhk4" path="res://assets/map/grass1.png" id="8_5tilj"]
+[ext_resource type="Texture2D" uid="uid://bmxpghho56ftp" path="res://assets/map/grave2broken.png" id="8_jfbdu"]
+[ext_resource type="Texture2D" uid="uid://eeadqpl053ga" path="res://assets/map/grave1broken.png" id="9_36k7h"]
+[ext_resource type="Texture2D" uid="uid://dmwiqkurseoey" path="res://assets/map/grass2.png" id="11_sphfl"]
+
+[sub_resource type="Animation" id="Animation_5tilj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("grass7:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("grass2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_sphfl"]
+resource_name = "grass1"
+length = 1.3666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("grass7:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.91),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_j0tad"]
+resource_name = "grass2"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("grass2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.48, 0.95),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j0tad"]
+_data = {
+&"RESET": SubResource("Animation_5tilj"),
+&"grass1": SubResource("Animation_sphfl"),
+&"grass2": SubResource("Animation_j0tad")
+}
 
 [node name="fase" type="Node2D" unique_id=1712191911]
 script = ExtResource("1_wescl")
 enemy_scene = ExtResource("2_jb5a4")
 upgrade_menu_scene = ExtResource("3_o0t22")
-bat = ExtResource("3_irph6")
 
 [node name="player" parent="." unique_id=1841599539 instance=ExtResource("1_s3ndg")]
 
@@ -29,6 +101,52 @@ offset_left = 40.0
 offset_top = 5.0
 offset_right = 40.0
 offset_bottom = 5.0
+
+[node name="tree" type="Sprite2D" parent="." unique_id=835070566]
+position = Vector2(282, 46)
+texture = ExtResource("6_y734o")
+
+[node name="lapide3" type="Sprite2D" parent="." unique_id=1733322593]
+position = Vector2(44.75, 40.5)
+scale = Vector2(1.121, 1)
+texture = ExtResource("7_36k7h")
+
+[node name="grass2" type="Sprite2D" parent="." unique_id=97091350]
+position = Vector2(76, 105)
+texture = ExtResource("8_5tilj")
+hframes = 3
+
+[node name="lapide" type="Sprite2D" parent="." unique_id=1728144113]
+position = Vector2(30, 200)
+texture = ExtResource("8_jfbdu")
+
+[node name="lapide2" type="Sprite2D" parent="." unique_id=1745295082]
+position = Vector2(60, 200)
+texture = ExtResource("9_36k7h")
+
+[node name="grass3" type="Sprite2D" parent="." unique_id=550129027]
+position = Vector2(93, 42)
+scale = Vector2(1.121, 1)
+texture = ExtResource("7_36k7h")
+
+[node name="grass4" type="Sprite2D" parent="." unique_id=630340236]
+position = Vector2(293, 114.99999)
+scale = Vector2(1.121, 1)
+texture = ExtResource("7_36k7h")
+
+[node name="grass7" type="Sprite2D" parent="." unique_id=975327285]
+position = Vector2(272, 162)
+texture = ExtResource("11_sphfl")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1416982597]
+libraries/ = SubResource("AnimationLibrary_j0tad")
+autoplay = &"grass1"
+
+[node name="grass8" type="Sprite2D" parent="." unique_id=1149430966]
+position = Vector2(90, 150)
+texture = ExtResource("11_sphfl")
+hframes = 3
 
 [connection signal="xp_collected" from="player" to="." method="_on_player_xp_collected"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_create_enemy_timeout"]

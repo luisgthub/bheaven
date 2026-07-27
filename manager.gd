@@ -7,26 +7,34 @@ var game_running = false
 #upgrade attributes
 var move_speed = 1
 var revive_stack = 0
-var area_of_effect = 1
+var area_of_effect :Vector2
 var projectile_count = 1
+var pierce_count = 0
+var holy_count = 0
+var candle_count = 0
+
 var magnet_area = 1
 var damage_bonus = 1
 var candle_damage = 10
 var basic_shot_damage = 5
 var holy_damage = 5
 var bone_damage = 5
+static var tempo_jogado: float = 0.0
 
 @export var all_upgrades: Array[UpgradeData] = [
-	preload("res://upgrades/basic.tres"),
+	#preload("res://upgrades/basic.tres"),
 	preload("res://upgrades/bone_weapon.tres"),
 	preload("res://upgrades/candle_weapon.tres"),
 	preload("res://upgrades/holywater.tres"),
 	preload("res://upgrades/damage.tres"),
 	preload("res://upgrades/increase_area.tres"),
-	preload("res://upgrades/magnet_area.tres"),
 	preload("res://upgrades/move_speed.tres"),
-	preload("res://upgrades/plus_projectile.tres"),
-	preload("res://upgrades/revive.tres")
+	#preload("res://upgrades/plus_projectile.tres"),
+	preload("res://upgrades/revive.tres"),
+	preload("res://upgrades/basic_plus.tres"),
+	preload("res://upgrades/boneplus.tres"),
+	preload("res://upgrades/candle_plus.tres"),
+	preload("res://upgrades/holyplus.tres")
 ]
 
 func apply_upgrade(id_upgrade:String):
@@ -35,17 +43,21 @@ func apply_upgrade(id_upgrade:String):
 			upgrade.current_level +=1
 			match id_upgrade:
 					"move":
-						move_speed *=1.2
+						move_speed *=1.1
 					"dama":
 						damage_bonus*=1.1
 					"area":
-						area_of_effect*=1.1
-					"proj":
+						area_of_effect+=Vector2(0.2,0.2)
+					"proj-count":
 						projectile_count+=1
-					"magnet":
-						magnet_area*=1.2
+					"holy-count":
+						holy_count+=1
+					"pierce-count":
+						pierce_count+=1
+					"candle-count":
+						candle_count+=1
 					"revive":
-						revive_stack=1
+						revive_stack+=1
 					"basic":
 						basic_shot_damage+=10
 					"candle":
@@ -54,6 +66,14 @@ func apply_upgrade(id_upgrade:String):
 						bone_damage+=10
 					"holy":
 						holy_damage+=10
+					"basic-weapon":
+						projectile_count+=1	
+					"bone-weapon":
+						pierce_count+=1
+					"candle-weapon":
+						candle_count+=1
+					"holy-weapon":
+						holy_count+=1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	game_running = true

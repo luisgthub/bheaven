@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b7dg8akicuvhb"]
+
+[ext_resource type="PackedScene" uid="uid://dna02pmn1j1og" path="res://player/player.tscn" id="1_s3ndg"]
+[ext_resource type="Script" uid="uid://c1f4mwr78hi6l" path="res://maps/fase.gd" id="1_wescl"]
+[ext_resource type="PackedScene" uid="uid://kejuo0jg2tlv" path="res://enemies/enemy.tscn" id="2_jb5a4"]
+[ext_resource type="Resource" uid="uid://ddb72nf6k5equ" path="res://enemies/bat.tres" id="3_irph6"]
+[ext_resource type="PackedScene" uid="uid://b6mb01s54pvpx" path="res://ui/upgrade_ui.tscn" id="3_o0t22"]
+[ext_resource type="Resource" uid="uid://bhcgowns0qbm6" path="res://enemies/phantom.tres" id="5_36k7h"]
+[ext_resource type="PackedScene" uid="uid://kh4uf24god0m" path="res://xp.tscn" id="5_owdj8"]
+[ext_resource type="Resource" uid="uid://dg02x5ofpecpo" path="res://enemies/skull.tres" id="6_jfbdu"]
+[ext_resource type="Resource" uid="uid://d4cdfhfm4mhnv" path="res://enemies/mage.tres" id="7_5tilj"]
+
+[node name="fase" type="Node2D" unique_id=1712191911]
+script = ExtResource("1_wescl")
+enemy_scene = ExtResource("2_jb5a4")
+upgrade_menu_scene = ExtResource("3_o0t22")
+bat = ExtResource("3_irph6")
+ghost = ExtResource("5_36k7h")
+skull = ExtResource("6_jfbdu")
+mage = ExtResource("7_5tilj")
+
+[node name="player" parent="." unique_id=1841599539 instance=ExtResource("1_s3ndg")]
+
+[node name="enemySpawnLine" type="Line2D" parent="." unique_id=2098162158]
+position = Vector2(-7.019232, -14.202703)
+scale = Vector2(1.8317308, 1.9594594)
+points = PackedVector2Array(0, 0, 93.91077, 0.10344887, 191, 0, 191, 69, 190.54068, 137.89656, 86.81365, 137.89656, -7, 138, -7, 63)
+width = 5.0
+
+[node name="xp" parent="." unique_id=634062879 instance=ExtResource("5_owdj8")]
+offset_left = 40.0
+offset_top = 5.0
+offset_right = 40.0
+offset_bottom = 5.0
+
+[connection signal="xp_collected" from="player" to="." method="_on_player_xp_collected"]

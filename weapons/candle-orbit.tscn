@@ -46,6 +46,7 @@ _data = {
 
 [node name="base_weapon" unique_id=291626842 instance=ExtResource("1_7krky")]
 z_index = 2
+scale = Vector2(0.5, 0.5)
 collision_layer = 0
 script = ExtResource("2_axjna")
 
@@ -55,6 +56,9 @@ texture = ExtResource("3_7vg0r")
 [node name="CollisionShape2D" parent="." index="1" unique_id=1350964178]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_orwns")
+
+[node name="Timer" parent="." index="2" unique_id=436504801]
+wait_time = 1.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4" unique_id=45090302]
 libraries/ = SubResource("AnimationLibrary_v5cfn")

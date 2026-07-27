@@ -1,3 +1,6 @@
+AnimationPlayer
+Sprite2D
+CPUParticles2D
 Label
 TextureRect
 CanvasLayer
@@ -9,6 +12,3 @@ CollisionShape2D
 Area2D
 RayCast2D
 TileMapLayer
-AnimationPlayer
-Timer
-Line2D
