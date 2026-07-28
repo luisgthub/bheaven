@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://qw232yefpnrs"]
+
+[ext_resource type="Script" uid="uid://csymqvdpppcrt" path="res://upgrades/upgrade_data.gd" id="1_yfq4w"]
+[ext_resource type="Texture2D" uid="uid://rrffaj0x0ye6" path="res://assets/upgrade-icons/proj-speed.png" id="2_yfq4w"]
+
+[resource]
+script = ExtResource("1_yfq4w")
+upgrade_id = "proj-speed"
+upgrade_name = "More Projectile speed"
+skill_description = "Receive  +10% projectile speed."
+upgrade_icon = ExtResource("2_yfq4w")
+metadata/_custom_type_script = "uid://csymqvdpppcrt"

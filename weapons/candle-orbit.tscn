@@ -46,7 +46,7 @@ _data = {
 
 [node name="base_weapon" unique_id=291626842 instance=ExtResource("1_7krky")]
 z_index = 2
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 collision_layer = 0
 script = ExtResource("2_axjna")
 
@@ -62,3 +62,6 @@ wait_time = 1.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4" unique_id=45090302]
 libraries/ = SubResource("AnimationLibrary_v5cfn")
+
+[node name="CPUParticles2D" parent="." index="5" unique_id=1722941943]
+scale_amount_max = 2.0

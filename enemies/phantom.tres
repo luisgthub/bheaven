@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_hka1e")
 enemy_name = "ghost"
-life = 30
+life = 100
 damage = 5
 sprite = ExtResource("2_xvmg6")
 metadata/_custom_type_script = "uid://cetdhctxd4jpv"

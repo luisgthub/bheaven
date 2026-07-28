@@ -48,12 +48,12 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a6vjd"]
 
-[node name="enemy" type="Node2D" unique_id=1684502755]
+[node name="enemy" type="Node2D" unique_id=1684502755 groups=["enemy"]]
 z_index = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1037724616 groups=["enemy"]]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 6
+collision_mask = 0
 script = ExtResource("1_7frlh")
 drop_scene = ExtResource("2_a6vjd")
 enemy_bat = ExtResource("2_orwns")
@@ -67,7 +67,7 @@ libraries/ = SubResource("AnimationLibrary_3t1x0")
 autoplay = &"idle"
 speed_scale = 3.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=726865224]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=726865224 groups=["enemy"]]
 position = Vector2(0, 1.5)
 shape = SubResource("CircleShape2D_a6vjd")
 

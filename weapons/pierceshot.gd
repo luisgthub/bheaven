@@ -9,6 +9,7 @@ var velocity:Vector2 = Vector2.ZERO
 func _ready() -> void:
 	super._ready() # Importante: não chama os outros itens
 	weapon_damage = Manager.bone_damage # Dano fixo do tiro básico
+	speed = speed*Manager.projectile_speed
 	ricochete=true
 	pierce=false
 	

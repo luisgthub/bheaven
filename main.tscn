@@ -1,8 +1,25 @@
-[gd_scene format=3 uid="uid://toqd84r8up7d"]
+[gd_scene format=4 uid="uid://toqd84r8up7d"]
 
 [ext_resource type="Script" uid="uid://b4sajwmcrbghl" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://b7dg8akicuvhb" path="res://maps/fase.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://cik53hgvyt7pl" path="res://menus/menu-background.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://ci8gafb3qs5l3" path="res://player/enemy.png" id="4_1bvp3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+font_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
+font_size = 4
+font_color = Color(0.7411765, 1, 1, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
+texture = ExtResource("4_1bvp3")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_h2yge"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_lquwl")
 
 [node name="main" type="Node2D" unique_id=1534841372]
 script = ExtResource("1_h2yge")
@@ -17,3 +34,23 @@ z_index = -2
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_0xm2m")
+
+[node name="Label" type="Label" parent="." unique_id=1476708043]
+offset_left = 130.0
+offset_top = 25.0
+offset_right = 170.0
+offset_bottom = 41.0
+label_settings = SubResource("LabelSettings_h2yge")
+
+[node name="objective" type="Label" parent="." unique_id=728192654]
+offset_left = 229.0
+offset_top = 221.0
+offset_right = 317.0
+offset_bottom = 237.0
+text = "Objective: 
+Survive for 5 minutes."
+label_settings = SubResource("LabelSettings_1bvp3")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=544960323]
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAAAAAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAAAAAD//woAAAAAAAAAAAD//wsAAAAAAAAAAAD//wwAAAAAAAAAAAD//w0AAAAAAAAAAAD//w4AAAAAAAAAAAAAAA8AAAAAAAAAAAABAA8AAAAAAAAAAAACAA8AAAAAAAAAAAADAA8AAAAAAAAAAAAEAA8AAAAAAAAAAAAFAA8AAAAAAAAAAAAGAA8AAAAAAAAAAAAHAA8AAAAAAAAAAAAIAA8AAAAAAAAAAAAJAA8AAAAAAAAAAAAKAA8AAAAAAAAAAAALAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAANAA8AAAAAAAAAAAAOAA8AAAAAAAAAAAAPAA8AAAAAAAAAAAAQAA8AAAAAAAAAAAARAA8AAAAAAAAAAAASAA8AAAAAAAAAAAATAA8AAAAAAAAAAAAUAA4AAAAAAAAAAAAUAA0AAAAAAAAAAAAUAAwAAAAAAAAAAAAUAAsAAAAAAAAAAAAUAAoAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAcAAAAAAAAAAAAUAAYAAAAAAAAAAAAUAAUAAAAAAAAAAAAUAAQAAAAAAAAAAAAUAAMAAAAAAAAAAAAUAAIAAAAAAAAAAAAUAAEAAAAAAAAAAAAUAAAAAAAAAAAAAAAUAP//AAAAAAAAAAATAP//AAAAAAAAAAASAP//AAAAAAAAAAARAP//AAAAAAAAAAAQAP//AAAAAAAAAAAPAP//AAAAAAAAAAAOAP//AAAAAAAAAAANAP//AAAAAAAAAAAMAP//AAAAAAAAAAALAP//AAAAAAAAAAAKAP//AAAAAAAAAAAJAP//AAAAAAAAAAAIAP//AAAAAAAAAAAHAP//AAAAAAAAAAAGAP//AAAAAAAAAAAFAP//AAAAAAAAAAAEAP//AAAAAAAAAAADAP//AAAAAAAAAAACAP//AAAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_h2yge")

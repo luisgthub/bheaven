@@ -1,7 +1,9 @@
-AnimationPlayer
-Sprite2D
-CPUParticles2D
+TileMapLayer
 Label
+Sprite2D
+Node2D
+AnimationPlayer
+CPUParticles2D
 TextureRect
 CanvasLayer
 TextureButton
@@ -11,4 +13,3 @@ HBoxContainer
 CollisionShape2D
 Area2D
 RayCast2D
-TileMapLayer

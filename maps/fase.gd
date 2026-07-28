@@ -8,7 +8,7 @@ var enemyArray = [bat]
 #pegar pontos
 @onready var xpbar = $xp/xpbar
 @onready var spawn_line = $enemySpawnLine
-
+@onready var anim_player = $AnimationPlayer
 func _ready() -> void:
 	$player.connect("xp_collected",_on_player_xp_collected)
 	if uihud and uihud.has_signal("level_up"):

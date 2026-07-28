@@ -20,9 +20,6 @@ var enemy_name:String
 
 # Variável para controlar o tempo global do jogo (caso você já tenha um Manager.tempo, ajuste aqui)
 
-func _process(delta: float) -> void:
-	Manager.tempo_jogado += delta
-
 func _ready() -> void:
 	enemyArray_setup()
 
@@ -35,14 +32,12 @@ func enemyArray_setup() -> void:
 	# 0 a 150 segundos (Até 2.5 min): Só Morcego (índice 0)
 	# 150 a 300 segundos (2.5 a 5 min): Morcego ou Fantasma
 	# Acima disso: Libera todos
-	if Manager.tempo_jogado < 150.0:
+	if Manager.time_passed < 60.0:
 		enemy_data = enemy_bat
-	elif Manager.tempo_jogado < 300.0:
+	elif Manager.time_passed < 120.0:
 		enemy_data = enemy_ghost
-	elif Manager.tempo_jogado < 450.0:
-		enemy_data = [enemy_skull,enemy_skull,enemy_skull,enemy_skull].pick_random()
-	elif Manager.tempo_jogado > 450.0:
-		enemy_data = [enemy_mage,enemy_mage,enemy_mage,enemy_mage].pick_random()
+	elif Manager.time_passed < 300.0:
+		enemy_data = [enemy_skull,enemy_ghost,enemy_mage]
 	
 	if enemy_data:
 		enemy_name = enemy_data.enemy_name
@@ -76,7 +71,8 @@ func enemy_take_damage(damage_value:int):
 	white_on_hit()
 	var explo = get_node_or_null("explosion")
 	if life<=0:
-		
+		Manager.score+=20
+		Manager.killed+=1
 		if explo:
 			explo.reparent(get_tree().current_scene)
 			explo.emitting = true

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dmohhe04dv7ev"]
+
+[ext_resource type="PackedScene" uid="uid://cj6vlwjs604tp" path="res://weapons/base_weapon.tscn" id="1_20q4f"]
+[ext_resource type="Script" uid="uid://wb243trpbicd" path="res://weapons/pierceshot.gd" id="2_00rxp"]
+[ext_resource type="Texture2D" uid="uid://c4rei0jejetus" path="res://weapons/bouncerang.png" id="3_20q4f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6vjd"]
+size = Vector2(6, 12)
+
+[node name="base_weapon" unique_id=291626842 instance=ExtResource("1_20q4f")]
+collision_layer = 0
+script = ExtResource("2_00rxp")
+
+[node name="Sprite2D" parent="." index="0" unique_id=348010403]
+texture = ExtResource("3_20q4f")
+hframes = 1
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1350964178]
+shape = SubResource("RectangleShape2D_a6vjd")
+
+[node name="Timer" parent="." index="2" unique_id=436504801]
+wait_time = 3.0
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="4" unique_id=1963444068]
+target_position = Vector2(11, 0)
+collision_mask = 3
+collide_with_areas = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_pierce_entered"]

@@ -5,6 +5,7 @@ var speed = 200
 func _ready() -> void:
 	super._ready() # Importante: não chama os outros itens
 	weapon_damage = Manager.basic_shot_damage # Dano fixo do tiro básico
+	speed = speed*Manager.projectile_speed
 	pierce = false
 
 func _physics_process(delta: float) -> void:

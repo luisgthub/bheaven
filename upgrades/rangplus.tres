@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bmy5c511b22d8"]
+
+[ext_resource type="Script" uid="uid://csymqvdpppcrt" path="res://upgrades/upgrade_data.gd" id="1_uxnri"]
+[ext_resource type="Texture2D" uid="uid://d3nwju00bn55o" path="res://assets/upgrade-icons/bouncerang-weapon.png" id="2_jlswb"]
+
+[resource]
+script = ExtResource("1_uxnri")
+upgrade_id = "rang-plus"
+upgrade_name = "bouncerang"
+skill_description = "Gain + 1 Bouncerang projectile  "
+upgrade_icon = ExtResource("2_jlswb")
+metadata/_custom_type_script = "uid://csymqvdpppcrt"

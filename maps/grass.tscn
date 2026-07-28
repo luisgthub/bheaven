@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bbp5fv0q70gc3"]
+
+[ext_resource type="Texture2D" uid="uid://dmwiqkurseoey" path="res://assets/map/grass2.png" id="1_ggir5"]
+
+[sub_resource type="Animation" id="Animation_5tilj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("grass7:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_sphfl"]
+resource_name = "grass1"
+length = 1.3666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("grass7:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.91),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_j0tad"]
+resource_name = "grass2"
+length = 1.4
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qw26a"]
+_data = {
+&"RESET": SubResource("Animation_5tilj"),
+&"grass1": SubResource("Animation_sphfl"),
+&"grass2": SubResource("Animation_j0tad")
+}
+
+[node name="Grass" type="Node2D" unique_id=1915739427]
+
+[node name="grass7" type="Sprite2D" parent="." unique_id=1554511648]
+texture = ExtResource("1_ggir5")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1523580315]
+libraries/ = SubResource("AnimationLibrary_qw26a")
+autoplay = &"grass1"

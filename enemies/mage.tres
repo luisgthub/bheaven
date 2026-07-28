@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_01bvh")
 enemy_name = "mage"
-life = 60
+life = 200
 damage = 20
 sprite = ExtResource("2_adpyf")
 metadata/_custom_type_script = "uid://cetdhctxd4jpv"

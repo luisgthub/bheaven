@@ -1,12 +1,13 @@
 extends CharacterBody2D
 @export var proj_scene:PackedScene
 @export var candle_scene:PackedScene
-@export var water_scene:PackedScene
+#@export var water_scene:PackedScene
 @export var pierce_scene:PackedScene
+@export var bouncerang_scene:PackedScene
 @export var dead_scene:PackedScene
 @onready var squad = $rotate_pivot/squad
 @onready var holyline = $holy_line
-const SPEED = 200.0
+const SPEED = 120.0
 @onready var lifebar = $lifebar/bar
 signal  xp_collected(value:int)
 func  _ready() -> void:
@@ -30,6 +31,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
 	move_and_slide()
+	
 func create_projectile(spread_angle:float):
 	var start_angle = spread_angle
 	var angle_offset = spread_angle/max(1,Manager.projectile_count-1)
@@ -50,17 +52,20 @@ func create_orbit(spread_angle:float):
 			inst.position = local_position
 			squad.add_child(inst)
 
-func create_water():
-	# Limpa os antigos
-	for child in holyline.get_children():
-		child.queue_free()
-		
-	for i in range(Manager.holy_count):
-		if i < holyline.get_point_count():
-			var inst = water_scene.instantiate()
-			var local_position = holyline.get_point_position(i)
-			inst.position = local_position
-			holyline.add_child(inst)
+
+func create_bouncerang(spread_angle:float):
+	var start_angle = spread_angle
+	var angle_offset = spread_angle/max(1,Manager.bouncerang_count-1)
+	for i in range(Manager.bouncerang_count):	
+		var inst = bouncerang_scene.instantiate()
+		inst.global_position = $attack_pivot.global_position
+		var current_angle = start_angle + (angle_offset*i)
+		inst.direction = Vector2.RIGHT.rotated(deg_to_rad(current_angle))
+		#inst.connect("target_signal",_on_proj_timer_timeout)
+		#print("coords",inst.global_position)
+		get_tree().current_scene.add_child(inst)
+
+
 func create_pierceshot(spread_angle:float):
 	var start_angle = spread_angle
 	var angle_offset = spread_angle/max(1,Manager.pierce_count-1)
@@ -78,16 +83,14 @@ func rotate_candle():
 func _on_proj_timer_timeout() -> void:
 	# O tiro básico sempre roda (começa em 1)
 	create_projectile(180)
-	
-	# Só cria a órbita se o player já tiver pelo menos 1
 	create_orbit(180)
-	create_water()
+	create_bouncerang(180)
 	create_pierceshot(180)
 func dead_screen():
 	var inst = dead_scene.instantiate()
 	get_tree().current_scene.add_child(inst)
 func player_take_damage():
-	lifebar.value -= 20
+	lifebar.value -=20
 	if lifebar.value <= 0 and Manager.revive_stack > 0:
 			# Se morreu mas tem revive, consome o stack, enche a vida e salva o player!
 			Manager.revive_stack -= 1
@@ -102,7 +105,7 @@ func _on_player_body_entered(body: Node2D) -> void:
 func _on_player_area_entered(area: Area2D) -> void:
 	if area.is_in_group("drop_xp"):
 		#print("adiciona 1 á barra de xp")
-		emit_signal("xp_collected",80)
+		emit_signal("xp_collected",50)
 		area.queue_free()
 
 

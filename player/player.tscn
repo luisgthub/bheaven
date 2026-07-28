@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bauqpv8mvs7sy" path="res://weapons/basic-shot.tscn" id="2_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://874y4n8mutni" path="res://weapons/candle-orbit.tscn" id="3_g6k8r"]
 [ext_resource type="PackedScene" uid="uid://yckknrwh1sy8" path="res://menus/game_over.tscn" id="3_qjkh3"]
-[ext_resource type="PackedScene" uid="uid://b00fu3me7s5o4" path="res://weapons/holywater.tscn" id="4_boad6"]
 [ext_resource type="PackedScene" uid="uid://cesuh68d0jqx5" path="res://ui/lifebar.tscn" id="4_yw30f"]
+[ext_resource type="PackedScene" uid="uid://dmohhe04dv7ev" path="res://weapons/bouncerang.tscn" id="5_hg6s5"]
 [ext_resource type="PackedScene" uid="uid://dfmko8g1sdiqu" path="res://weapons/pierceshot.tscn" id="5_rgyib"]
 [ext_resource type="Texture2D" uid="uid://bk317arutn2i0" path="res://assets/player.png" id="7_rgyib"]
 
@@ -53,13 +53,13 @@ _data = {
 [node name="player" type="CharacterBody2D" unique_id=1841599539]
 position = Vector2(160, 120)
 collision_layer = 2
-collision_mask = 2
+collision_mask = 4
 motion_mode = 1
 script = ExtResource("1_rkbax")
 proj_scene = ExtResource("2_g1dw6")
 candle_scene = ExtResource("3_g6k8r")
-water_scene = ExtResource("4_boad6")
 pierce_scene = ExtResource("5_rgyib")
+bouncerang_scene = ExtResource("5_hg6s5")
 dead_scene = ExtResource("3_qjkh3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1881971801]
@@ -67,8 +67,8 @@ texture = ExtResource("7_rgyib")
 hframes = 3
 
 [node name="Area2D" type="Area2D" parent="." unique_id=925330231]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=654340026]
 position = Vector2(0, 0.5)

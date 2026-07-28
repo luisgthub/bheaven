@@ -7,6 +7,7 @@ var base_scale = Vector2(1,1)
 @export var weapon_damage = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	weapon_damage+=Manager.damage_bonus	
 	$CollisionShape2D.scale = base_scale + Manager.area_of_effect
 	pass	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

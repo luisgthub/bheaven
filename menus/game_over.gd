@@ -28,8 +28,11 @@ func _on_restart_pressed() -> void:
 	Manager.basic_shot_damage = 5
 	Manager.holy_damage = 5
 	Manager.bone_damage = 5
-	Manager.tempo_jogado = 0.0
-	
+	Manager.bouncerang_damage = 10
+	Manager.time_passed= 0.0
+	Manager.score = 0
+	Manager.killed = 0
+	Manager.game_running = true
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://main.tscn")
 	self.queue_free()
